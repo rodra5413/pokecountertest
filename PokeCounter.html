@@ -15,6 +15,8 @@
     src="//code.jquery.com/jquery-1.6.4.js"
     
   ></script>
+  
+  <script src="/Javascript.js"></script>
 
   <style id="compiled-css" type="text/css">
       body {
@@ -163,7 +165,6 @@ h1 {font-family:sans-serif; padding-top: 45px;}
 
 
 </head>
-<body>
     <body>
 <div id="container">
   <div id="field1" class="poke">
@@ -198,42 +199,4 @@ Total:
 
 </body>
 
-
-    <script type="text/javascript">//<![CDATA[
-
-
-
-
-$('.add').click(function () {
-    $(this).prev().val(+$(this).prev().val() + 1);
-    
-        // Loop through all input's and re-calculate the total
-    var total = 0;
-    $('input.qty').each(function(){
-        total += parseInt(this.value);
-    });
-    
-    // Update the total
-    $('#total').val(total);
-    
-});
-
-
-  //]]></script>
-
-  <script>
-    // tell the embed parent frame the height of the content
-    if (window.parent && window.parent.parent){
-      window.parent.parent.postMessage(["resultsFrame", {
-        height: document.body.getBoundingClientRect().height,
-        slug: "Lot6f734"
-      }], "*")
-    }
-
-    // always overwrite window.name, in case users try to set it manually
-    window.name = "result"
-  </script>
-
-
-</body>
 </html>
