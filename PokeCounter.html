@@ -1,0 +1,242 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Pokemon Counter</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <script
+    type="text/javascript"
+    src="//code.jquery.com/jquery-1.6.4.js"
+    
+  ></script>
+
+    <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+
+
+  <style id="compiled-css" type="text/css">
+      body {
+  background: rgba(0, 0, 0, 0);
+}
+#container {
+   background: rgba(200, 54, 54, 0);  
+   border: none;
+   height: 180px;
+   width: 700px;
+}
+button {
+     background:none;
+}
+#field1 button  {
+    margin: 4px;
+    float: center;
+    clear: both;
+    background-image: url( 
+'https://www.serebii.net/swordshield/pokemon/small/819.png');
+    background-size: cover;
+    width: 100px; 
+    height: 100px; 
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 5px;
+    border: none;
+    color: none;
+}
+#field2 button  {
+    margin: 4px;
+    float: center;
+    clear: both;
+    background-image: url( 
+'https://www.serebii.net/swordshield/pokemon/small/824.png');
+    background-size: cover;
+    width: 100px; 
+    height: 100px; 
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 5px;
+    border: none;
+    color: none;
+}
+#field3 button  {
+    margin: 4px;
+    float: center;
+    clear: both;
+    background-image: url( 
+'https://www.serebii.net/swordshield/pokemon/small/010.png');
+    background-size: cover;
+    width: 100px; 
+    height: 100px; 
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 5px;
+    border: none;
+    color: none;
+}
+#field4 button  {
+    margin: 4px;
+    float: center;
+    clear: both;
+    background-image: url( 
+'https://www.serebii.net/swordshield/pokemon/small/736.png');
+    background-size: cover;
+    width: 100px; 
+    height: 100px; 
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 5px;
+    border: none;
+    color: none;
+}
+#field5 button  {
+    margin: 4px;
+    float: center;
+    clear: both;
+    background-image:
+    url( 
+'https://www.serebii.net/swordshield/pokemon/small/163.png'
+);
+    background-size: cover;
+    width: 100px; 
+    height: 100px; 
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 5px;
+    border: none;
+    color: none;
+}
+input {
+    color: white;
+  text-shadow: 2px 2px black;
+    text-align: center;
+    width: 80px;
+    margin: 4px;
+    position: relative;
+    top: 130px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 1000;
+    font-size: 20pt;
+    font-family: sans-serif;
+    font-weight:bold;
+    background: none;
+    border: none;
+}
+input#total {
+  top: 8px;
+  color: red;
+  font-weight: bold;
+  font-size: 20pt;
+  color: white;
+  text-shadow: 2px 2px #ff0000;
+}
+h1 {font-family:sans-serif; padding-top: 45px;}
+ div.poke {
+    width:100px;
+    float:left;
+    border: none;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: none;
+    color: red;
+}
+
+
+    /* EOS */
+  </style>
+
+  <script id="insert"></script>
+
+
+</head>
+<body>
+    <body>
+<div id="container">
+  <div id="field1" class="poke">
+    <input type="text" id="1" value="0" class="qty" />
+    <button type="button" id="add" class="add"></button>
+  </div>
+  <div id="field2" class="poke">
+    <input type="text" id="2" value="0" class="qty" />
+    <button type="button" id="add2" class="add"></button>
+  </div>
+  <div id="field3" class="poke">
+    <input type="text" id="3" value="0" class="qty" />
+    <button type="button" id="add3" class="add"></button>
+  </div>
+  <div id="field4" class="poke">
+    <input type="text" id="4" value="0" class="qty" />
+    <button type="button" id="add4" class="add"></button>
+  </div>
+  <div id="field5" class="poke">
+    <input type="text" id="5" value="0" class="qty" />
+    <button type="button" id="add5" class="add"></button>
+  </div>
+
+
+<div id="field6" class="poke">
+<h1>
+Total:
+</h1>
+<input type="text" id="total" value="0" size="10" class="poke" />
+</div>
+</div>
+
+</body>
+
+
+    <script type="text/javascript">//<![CDATA[
+
+
+
+
+$('.add').click(function () {
+    $(this).prev().val(+$(this).prev().val() + 1);
+    
+        // Loop through all input's and re-calculate the total
+    var total = 0;
+    $('input.qty').each(function(){
+        total += parseInt(this.value);
+    });
+    
+    // Update the total
+    $('#total').val(total);
+    
+});
+
+
+  //]]></script>
+
+  <script>
+    // tell the embed parent frame the height of the content
+    if (window.parent && window.parent.parent){
+      window.parent.parent.postMessage(["resultsFrame", {
+        height: document.body.getBoundingClientRect().height,
+        slug: "Lot6f734"
+      }], "*")
+    }
+
+    // always overwrite window.name, in case users try to set it manually
+    window.name = "result"
+  </script>
+
+
+</body>
+</html>
